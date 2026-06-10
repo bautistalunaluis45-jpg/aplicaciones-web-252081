@@ -49,7 +49,7 @@ public class MainController {
     }
 
 
-    @PostMapping("/autentication")
+    @PostMapping("/autenticacion")
     public String autenticacion(@RequestParam("email") String email,
                                 @RequestParam("password") String password) {
 

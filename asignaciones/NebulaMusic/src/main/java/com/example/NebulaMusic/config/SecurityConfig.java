@@ -1,4 +1,4 @@
-package config;
+package com.example.NebulaMusic.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,11 +15,9 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/index", "/iniciar-sesion", "/registro").permitAll()
+                        .requestMatchers("/", "/index", "/index.html", "/iniciar-sesion", "/iniciar-sesion.html", "/registro", "/registro.html").permitAll()
                         .requestMatchers("/crear-cuenta", "/autenticacion").permitAll()
-                        .requestMatchers("/static/**", "/css/**", "/js/**", "/images/**").permitAll()
-                        .requestMatchers("/", "/index", "/index.html", "/iniciar-sesion",
-                                "/iniciar-sesion.html", "/registro", "/registro.html").permitAll()
+                        .requestMatchers("/styles/**", "/imgs/**").permitAll()
                         .anyRequest().authenticated()
                 );
         return http.build();

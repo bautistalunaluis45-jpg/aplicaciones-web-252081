@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nébula Music - Registro</title>
-    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
 
@@ -26,74 +26,71 @@
             -->
             <form class="auth-form" method="post" action="/crear-cuenta" enctype="application/x-www-form-urlencoded">
                 <h2>Crear Cuenta</h2>
+                <div>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+
+                <div>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" minlength="8" required>
+                </div>
+
+                <div>
+                    <label for="user">User:</label>
+                    <input type="text" id="user" name="user" required>
+                </div>
+
+                <div>
+                    <label>Genero:</label>
                     <div>
-                        <label for="nombre">Nombre Completo:</label>
-                        <input type="text" id="nombre" name="nombre">
+                        <input type="radio" id="radio_femenino" name="rad_genero" value="Femenino">
+                        <label for="radio_femenino">Femenino</label>
+                        <input type="radio" id="radio_masculino" name="rad_genero" value="Masculino">
+                        <label for="radio_masculino">Masculino</label>
+                        <input type="radio" id="radio_otro" name="rad_genero" value="Otro">
+                        <label for="radio_otro">Otro</label>
                     </div>
-                    <div>
-                        <label for="email">Corre:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                </div>
 
-                    <div>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" minlength="8" required>
-                    <div>
-                        <label for="user">User:</label>
-                        <input type="text" id="user" name="user" required >
-                    </div>
+                <div>
+                    <label for="sel_suscripcion">Tipo Suscripcion:</label>
+                    <select name="sel_suscripcion" id="sel_suscripcion">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="gratis">Gratis</option>
+                        <option value="premium_mensual">Premium Mensual ($99/mes)</option>
+                        <option value="premium_anual">Premium Anual ($899/mes)</option>
+                    </select>
+                </div>
 
-                    <div>
-                        <label>Genero:</label>
-                        <div>
-                            <input type="radio" id="radio_femenino" name="radio_genero">
-                            <label for="radio_femenino">Femenino</label>
-                            <input type="radio" id="radio_masculino" name="radio_genero">
-                            <label for="radio_masculino">Masculino</label>
-                            <input type="radio" id="radio_otro" name="radio_genero">
-                            <label for="radio_otro">Otro</label>
+                <div>
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
 
-                        </div>
-                    </div>
+                <div>
+                    <label for="comentario">Comentarios:</label>
+                    <textarea id="comentario" name="comentarios" rows="4" cols="40" placeholder="Cuentanos de ti"></textarea>
+                </div>
 
-                    <div>
-                        <label for="sel_suscripcion">Tipo Suscripcion:</label>
-                        <select name="sel_suscripcion" id="sel_suscripcion">
-                            <option value="">Selecciona una opcion</option>
-                            <option value="gratis">Gratis</option>
-                            <option value="premium_mensual">Premium Mensual ($99/mes)</option>
-                            <option value="premium_anual">Premium Anual ($899/mes)</option>
+                <div>
+                    <input type="checkbox" id="terminos" name="chk_terminos" value="aceptado" required>
+                    <label for="terminos">Acepto los terminos y condiciones</label>
+                </div>
 
-                        </select>
-                        
-                    </div>
+                <div>
+                    <button type="submit">Crear cuenta</button>
+                    <button type="reset">Limpiar</button>
+                </div>
 
-                    <div>
-                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-                    </div>
-
-                    <div>
-                        <label for="comentario">Comentarios:</label>
-                        <textarea id="comentario" name="comentario" rows="4" cols="40" PLACEHOLDER="Cuentanos de ti"> </textarea>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="terminos" name="chk_terminos" value="aceptado" required>
-                        <label for="terminos">Acepto los terminos y condiciones</label>
-                    </div>
-
-                    <div>
-                        <button type="submit">Crear cuenta</button>
-                        <button type="reset">Limpiar</button>
-                    </div>
-
-                        <p>¿Ya tienes una cuenta?
-                            <a href="iniciar-sesion.html">Inicia sesión aquí</a>
-                        </p>
-                    </div>
-
-
+                <p>¿Ya tienes una cuenta?
+                    <a href="/iniciar-sesion">Inicia sesión aquí</a>
+                </p>
             </form>
 
         </section>
