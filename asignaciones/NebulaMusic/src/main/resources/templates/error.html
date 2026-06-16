@@ -8,9 +8,22 @@
 </head>
 <body>
 
-     <main class="error-container">
-         <h1>Ocurrió un error</h1>
-         <p>El correo ya está registrado o la solicitud no pudo completarse.</p>
+    <main class="auth-container">
+        <section class="auth-card">
+            <div class="form-logo">
+                <img src="/imgs/nebula-03.svg" alt="Logo Nébula">
+            </div>
+
+            <div class="form-header">
+                <h3>Ocurrió un error</h3>
+            </div>
+
+            <p class="link">El correo ya está registrado o la solicitud no pudo completarse.</p>
+
+            <form action="/index" method="get">
+                <button type="submit" class="btn-primary">Volver al inicio</button>
+            </form>
+        </section>
     </main>
 
     <footer>

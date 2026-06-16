@@ -51,7 +51,7 @@ nav{
     z-index: 100;
 }
 
-nav .log img{
+nav .logo img{
     height: 50px;
     vertical-align: middle;
 }
@@ -126,7 +126,7 @@ header.principal h1{
 
 }
 
-header.principal spna{
+header.principal span{
     color: var(--highlight);
     text-shadow: 0 0 10px rgba(237, 246, 125, .5);
 
@@ -150,7 +150,7 @@ main{
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
-    transition: transform 0.3s ease, box-shadow 0.3ms ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #2a280a;
     display: flex;
     flex-direction: column;
@@ -170,7 +170,7 @@ main{
     max-width: 420px;
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 105px 35px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
     border: 1px solid #2a280a;
     transition: max-width 0.3s ease;
 }
@@ -362,7 +362,7 @@ footer p{
         padding: 20px 0;
         gap: 20px;
         display: none;
-        box-shadow: 0 10pc;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
 
     #menu-toggle:checked ~ ul{
@@ -370,17 +370,17 @@ footer p{
 
     }
 
-    #menu-toggle:checked ~ .menu-button span:nth.child(1){
+    #menu-toggle:checked ~ .menu-button span:nth-child(1){
         transform: rotate(45deg) translate(5px, 6px);
     }
 
-    #menu-toggle:checked ~ .menu-button span:nth.child(2){
+    #menu-toggle:checked ~ .menu-button span:nth-child(2){
         opacity: 0;
     }
 
-    #menu-toggle:checked ~ .menu-button span:nth.child(3){
-    transform: rotate(-45deg) translate(5px, -7px);
-}
+    #menu-toggle:checked ~ .menu-button span:nth-child(3){
+        transform: rotate(-45deg) translate(5px, -7px);
+    }
 
 }
 
