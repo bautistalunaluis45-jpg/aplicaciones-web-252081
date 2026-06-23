@@ -11,6 +11,7 @@ public class GameController {
     public String fragmentsDemo(){
 
 
+
         return "fragments-demo";
     }
 
