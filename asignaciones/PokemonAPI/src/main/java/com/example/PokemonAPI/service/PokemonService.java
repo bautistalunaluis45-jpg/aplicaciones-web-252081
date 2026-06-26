@@ -1,5 +1,6 @@
 package com.example.PokemonAPI.service;
 
+import com.example.PokemonAPI.exception.ResourceNotFoundException;
 import com.example.PokemonAPI.model.Pokemon;
 import com.example.PokemonAPI.repository.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class PokemonService {
     }
 
     public Pokemon obtenerPorId(Long id){
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Pokemon no encontrado"));
     }
 
     public Pokemon crearPokemon(Pokemon pokemon){
@@ -32,9 +33,9 @@ public class PokemonService {
             pokemon.setAtaque(pokemonActualizado.getAtaque());
             pokemon.setDefensa(pokemonActualizado.getDefensa());
             pokemon.setDescripcion(pokemonActualizado.getDescripcion());
-            pokemon.setImagenUrl(pokemonActualizado.getImagenUrl());
+            pokemon.setImagnUrl(pokemonActualizado.getImagnUrl());
             return repository.save(pokemon);
-        }).orElse(null);
+        }).orElseThrow(() -> new ResourceNotFoundException("Pokemon no encontrado para editarlo"));     
     }
 
     public Pokemon actualizarPokemonParcial(Long id, Pokemon pokemonParcial) {
@@ -45,14 +46,18 @@ public class PokemonService {
             if (pokemonParcial.getAtaque() != null) pokemon.setAtaque(pokemonParcial.getAtaque());
             if (pokemonParcial.getDefensa() != null) pokemon.setDefensa(pokemonParcial.getDefensa());
             if (pokemonParcial.getDescripcion() != null) pokemon.setDescripcion(pokemonParcial.getDescripcion());
-            if (pokemonParcial.getImagenUrl() != null) pokemon.setImagenUrl(pokemonParcial.getImagenUrl());
+            if (pokemonParcial.getImagnUrl() != null) pokemon.setImagnUrl(pokemonParcial.getImagnUrl());
 
             return repository.save(pokemon);
-        }).orElse(null);
+        }).orElseThrow(() -> new ResourceNotFoundException("Pokemon no encontrado para editarlo parcialmente"));
     }
 
     public void eliminarPokemon(Long id){
-        repository.deleteById(id);
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("Pokemon no encontrado para eliminar");
+        }
     }
 
 
