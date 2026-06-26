@@ -42,10 +42,4 @@ public class PokemonController {
         pokemonService.eliminarPokemon(id);
     }
 
-
-
-
-
-
-
 }
